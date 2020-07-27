@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour {
     // this variable is used to update position of enemy, according to the player's position
     private Transform playerTransform;
 
+    // this variable is used to generate explosion when enemy die
+    [SerializeField] private GameObject _cloudParticlePrefap;
+
     // Use this for initialization
     void Start() {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -41,6 +44,7 @@ public class Enemy : MonoBehaviour {
                 // the contact force is downward
                 // that's mean, the player hit this enemy from the top
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
+                Instantiate(_cloudParticlePrefap, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             else

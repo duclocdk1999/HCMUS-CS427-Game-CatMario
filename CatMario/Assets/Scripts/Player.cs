@@ -11,13 +11,13 @@ public class Player : MonoBehaviour {
     bool isGrounded;
 
     [SerializeField]
-    Transform groundCheck;
+    protected Transform groundCheck;
 
     [SerializeField]
-    private float runSpeed;
+    protected float runSpeed;
 
     [SerializeField]
-    private float jumpSpeed;
+    protected float jumpSpeed;
     // -------------------------------------------------------------------------
     // Use this for initialization
     public void Start () {
